@@ -1,4 +1,36 @@
+@mixin center_elt{
+    display: flex;
+    justify-content: center;
+}
+
 body{
-    background-color: pink;
-    
+    margin: 0;
+}
+
+.header{
+    display: flex;
+    height: 50px;
+        &--center{
+            @include center_elt;
+            height: 50px;
+        }
+        &__logo{
+            @include center_elt;
+            width: 50%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            img{
+                width: 10em;
+            }
+        }
+        &__back{
+            @include center_elt;
+            align-items: center;
+            width: 25%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        &__button{
+            color: black;
+        }
 }
