@@ -1,10 +1,28 @@
 @mixin center_elt{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
+
+@mixin column{
+    display: flex;
+    flex-direction: column;
+}
+
+$color-v:#9356DC;
+$color-p:#FF79DA;
+$color-g:#F7F7F7;
+$shadow: 1px 1px 5px 1px;
 
 body{
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 15px;
 }
 
 .header{
@@ -17,20 +35,90 @@ body{
         &__logo{
             @include center_elt;
             width: 50%;
-            margin-top: 10px;
-            margin-bottom: 10px;
             img{
                 width: 10em;
             }
         }
         &__back{
             @include center_elt;
-            align-items: center;
             width: 25%;
-            margin-top: 10px;
-            margin-bottom: 10px;
         }
         &__button{
             color: black;
+        }
+}
+
+.block{
+    @include column;
+        &__location{
+            @include center_elt;
+            background-color: #EDEDED;
+            border-top: solid #E1E1E1;
+            p{
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .fa-location-dot{
+                padding-right: 5px;
+            }
+        }
+        &__explorer{
+            @include column;
+            align-items: center;
+            text-align: center;
+            height: 14em;
+            background-color: $color-g;
+            h1{
+                font-weight: 700;
+                width: 10em;
+                margin-bottom: 5px;
+            }
+            p{
+                margin-top: 0;
+                font-size: 15px;
+                font-weight: 400;
+                width: 20em;
+            }
+            &__button{
+                border: 2px $color-v;
+                box-shadow: $shadow $color-v;
+                border-radius: 25px;
+                font-size: 13px;
+                background: linear-gradient($color-p, $color-v);
+                color: white;
+                padding-left: 20px;
+                padding-right: 15px;
+                margin-top: 5px;
+                height: 43px;
+
+                &:hover{
+                    box-shadow: $shadow #803ADD;
+                    background: linear-gradient(#FE82DC, #975DDD);
+                }
+            }
+        }
+        &__step{
+            @include center_elt;
+            ul{
+                list-style-type: none;
+                padding: 0;
+
+                li{
+                    @include center_elt;
+                    margin-bottom: 30px;
+                    background-color: $color-g;
+                    border: 2px $color-g;
+                    box-shadow: $shadow #E1E1E1;
+                    border-radius: 10px;
+                    width: 21em;
+                    height: 50px;
+                    font-size: 13px;
+                    font-weight: 700;
+
+                    i{
+                        padding-right: 15px;
+                    }
+                }
+            }
         }
 }
