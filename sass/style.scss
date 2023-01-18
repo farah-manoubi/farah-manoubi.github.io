@@ -12,7 +12,7 @@
 $color-v:#9356DC;
 $color-p:#FF79DA;
 $color-g:#F7F7F7;
-$shadow: 1px 1px 5px 1px;
+$shadow: 0px 4px 8px 0px;
 
 body{
     margin: 0;
@@ -105,18 +105,28 @@ h2{
 
                 li{
                     @include center_elt;
-                    margin-bottom: 30px;
+                    margin-bottom: 25px;
                     background-color: $color-g;
                     border: 2px $color-g;
                     box-shadow: $shadow #E1E1E1;
-                    border-radius: 10px;
+                    border-radius: 15px;
                     width: 21em;
-                    height: 50px;
-                    font-size: 13px;
-                    font-weight: 700;
+                    height: 55px;
+                    font-size: 14px;
+                    font-weight: 500;
 
                     i{
-                        padding-right: 15px;
+                        padding-right: 20px;
+                        color: grey;
+
+                    }
+
+                    &:hover{
+                        background-color: #EDEDED;
+
+                        i{
+                            color: $color-v;
+                        }
                     }
                 }
             }
