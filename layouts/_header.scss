@@ -1,0 +1,24 @@
+@import "../utils/fonctions";
+
+.header{
+    display: flex;
+    height: 50px;
+        &--center{
+            @include center_elt;
+            height: 50px;
+        }
+        &__logo{
+            @include center_elt;
+            width: 50%;
+            img{
+                width: 10em;
+            }
+        }
+        &__back{
+            @include center_elt;
+            width: 25%;
+        }
+        &__button{
+            color: black;
+        }
+}

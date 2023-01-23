@@ -1,18 +1,8 @@
-@mixin center_elt{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@import "../utils/variables";
+@import "../utils/fonctions";
+@import "../layouts/header";
+@import "../layouts/footer";
 
-@mixin column{
-    display: flex;
-    flex-direction: column;
-}
-
-$color-v:#9356DC;
-$color-p:#FF79DA;
-$color-g:#F7F7F7;
-$shadow: 0px 4px 8px 0px;
 
 body{
     margin: 0;
@@ -23,29 +13,6 @@ h2{
     font-size: 20px;
     font-weight: 700;
     margin-left: 15px;
-}
-
-.header{
-    display: flex;
-    height: 50px;
-        &--center{
-            @include center_elt;
-            height: 50px;
-        }
-        &__logo{
-            @include center_elt;
-            width: 50%;
-            img{
-                width: 10em;
-            }
-        }
-        &__back{
-            @include center_elt;
-            width: 25%;
-        }
-        &__button{
-            color: black;
-        }
 }
 
 .block{
@@ -132,3 +99,55 @@ h2{
             }
         }
 }
+
+.container{
+    @include column;
+    background-color: $color-g;
+    margin-top: 20px;
+    padding-top: 30px;
+    height: 67em;
+    &__cards{
+        @include column;
+        align-items: center;
+        gap: 20px;
+        &__card{
+            width: 90%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            img{
+                width: 100%;
+                height: 155px;
+                object-fit: cover;
+                border-radius: 10px 10px 0px 0px;
+            }
+            &__txt{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                    &__title{
+                        margin-left: 15px;
+                        margin-top: 10px;
+                        margin-bottom: 15px;
+                       
+                            h3{
+                                margin: 0;
+                                font-size: 17px;
+                            }
+                            p{
+                                margin: 0;
+                            }
+                    }
+                    &__icone{
+                        margin-right: 20px;
+                            &:hover{
+                                color: $color-v;
+                            }
+                    }
+            }
+        }
+    }
+
+}
+
+

@@ -1,0 +1,30 @@
+@import "../utils/fonctions";
+
+.footer{
+    @include column;
+    background-color: #353535;
+
+    &__texte{
+        color: white;
+        margin-top: 15px;
+        margin-bottom: 30px;
+        h2{
+            font-family: 'Shrikhand', cursive;
+            font-size: 15px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+        p{
+            margin-left: 15px;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 80%;
+
+            i{
+                color: white;
+                padding-right: 4px;
+            }
+        }
+        
+    }
+}
