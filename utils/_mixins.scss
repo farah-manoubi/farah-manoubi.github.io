@@ -1,0 +1,29 @@
+@import "../utils/variables";
+
+@mixin center_elt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin column{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin desktop-only {
+    @media screen and (min-width: map-get($breakpoints, desktop)){
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: map-get($breakpoints, tablet)){
+        @content;
+    }
+}
+
+@mixin titre{
+    font-size: 15px;
+    font-weight: 400;
+}
