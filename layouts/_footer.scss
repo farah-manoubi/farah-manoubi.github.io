@@ -1,9 +1,18 @@
 @import "../utils/mixins";
 
+
 .footer{
     @include column;
     background-color: #353535;
 
+    &--menu{
+        @include column;
+        background-color: #353535;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 78em;
+    }
     &__texte{
         color: white;
         margin-top: 15px;

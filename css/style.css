@@ -32,6 +32,15 @@
   flex-direction: column;
   background-color: #353535;
 }
+.footer--menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: 78em;
+}
 .footer__texte {
   color: white;
   margin-top: 15px;
@@ -269,6 +278,7 @@ h2 {
 .picture {
   height: 205px;
   position: relative;
+  width: 100%;
 }
 .picture img {
   width: 100%;
@@ -284,8 +294,8 @@ h2 {
   position: absolute;
   width: 100%;
   top: 225px;
-  background-color: white;
-  padding-left: 15px;
+  background-color: #F7F7F7;
+  height: 70em;
 }
 .menu__title {
   display: flex;
@@ -293,8 +303,9 @@ h2 {
 .menu__title h2 {
   font-family: "Shrikhand", cursive;
   font-weight: normal;
-  margin-left: 0;
   width: 50%;
+  margin-left: 0;
+  padding-left: 10px;
 }
 .menu__title i {
   display: flex;
@@ -304,17 +315,59 @@ h2 {
   width: 50%;
   padding-right: 40px;
 }
-.menu__starter h3 {
+.menu__container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.menu__container h3 {
   font-size: 15px;
   font-weight: 400;
 }
-.menu__main h3 {
-  font-size: 15px;
-  font-weight: 400;
+.menu__container__starter, .menu__container__main, .menu__container__dessert {
+  height: 17em;
 }
-.menu__dessert h3 {
+.menu__container__starter__txt, .menu__container__main__txt, .menu__container__dessert__txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px #F7F7F7;
+  box-shadow: 0 4px 8px 0 #E1E1E1;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+.menu__container__starter__txt h3, .menu__container__main__txt h3, .menu__container__dessert__txt h3 {
+  margin: 1px 0 0 10px;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 700;
+}
+.menu__container__starter__txt p, .menu__container__main__txt p, .menu__container__dessert__txt p {
+  padding: 0;
+  margin: 7px 0 0 10px;
+  font-size: 13px;
+}
+.menu__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu__button__command {
+  border: 2px #9356DC;
+  box-shadow: 0 4px 8px 0 #9356DC;
+  border-radius: 25px;
+  font-size: 13px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  padding-left: 20px;
+  padding-right: 15px;
+  margin-top: 15px;
+  height: 40px;
+  width: 170px;
+}
+.menu__button__command:hover {
+  box-shadow: 0 4px 8px 0 #803ADD;
+  background: linear-gradient(#FE82DC, #975DDD);
 }
 
 /*# sourceMappingURL=style.css.map */

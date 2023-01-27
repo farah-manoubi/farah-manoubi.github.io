@@ -23,7 +23,23 @@
     }
 }
 
-@mixin titre{
+@mixin titre_h3{
     font-size: 15px;
     font-weight: 400;
+}
+
+@mixin button{
+    border: 2px $color-v;
+    box-shadow: $shadow $color-v;
+    border-radius: 25px;
+    font-size: 13px;
+    background: linear-gradient($color-p, $color-v);
+    color: white;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+
+@mixin button_hover{
+    box-shadow: $shadow #803ADD;
+    background: linear-gradient(#FE82DC, #975DDD);
 }
