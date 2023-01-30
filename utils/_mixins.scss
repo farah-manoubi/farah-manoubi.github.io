@@ -11,18 +11,7 @@
     flex-direction: column;
 }
 
-@mixin tablet-only {
-    @media screen and (min-width: map-get($breakpoints, tablet)){
-        @content;
-    }
-}
 
-
-@mixin desktop-only {
-    @media screen and (min-width: map-get($breakpoints, desktop)){
-        @content;
-    }
-}
 
 @mixin titre_h3{
     font-size: 15px;
@@ -43,4 +32,17 @@
 @mixin button_hover{
     box-shadow: $shadow #803ADD;
     background: linear-gradient(#FE82DC, #975DDD);
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: map-get($breakpoints, tablet)){
+        @content;
+    }
+}
+
+
+@mixin desktop-only {
+    @media screen and (min-width: map-get($breakpoints, desktop)){
+        @content;
+    }
 }
