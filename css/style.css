@@ -69,8 +69,8 @@ body {
 }
 @media screen and (min-width: 768px) {
   body {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 @media screen and (min-width: 992px) {
@@ -148,6 +148,16 @@ h2 {
   list-style-type: none;
   padding: 0;
 }
+@media screen and (min-width: 768px) {
+  .block__step ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 45em;
+    gap: 20px;
+  }
+}
 @media screen and (min-width: 992px) {
   .block__step ul {
     display: flex;
@@ -191,6 +201,11 @@ h2 {
   padding-top: 30px;
   height: 67em;
 }
+@media screen and (min-width: 768px) {
+  .container {
+    height: 40em;
+  }
+}
 @media screen and (min-width: 992px) {
   .container {
     height: 30em;
@@ -202,6 +217,15 @@ h2 {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .container__cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-flow: row wrap;
+  }
 }
 @media screen and (min-width: 992px) {
   .container__cards {
@@ -217,6 +241,11 @@ h2 {
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   position: relative;
+}
+@media screen and (min-width: 768px) {
+  .container__cards__card {
+    width: 40%;
+  }
 }
 .container__cards__card img {
   width: 100%;
