@@ -67,6 +67,12 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
+@media screen and (min-width: 768px) {
+  body {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
 @media screen and (min-width: 992px) {
   body {
     margin-left: 30px;
