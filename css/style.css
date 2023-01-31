@@ -38,7 +38,7 @@
   background-color: #353535;
   position: absolute;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   top: 78em;
 }
 .footer__texte {
@@ -66,6 +66,7 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   body {
@@ -318,8 +319,9 @@ h2 {
 
 .picture {
   height: 205px;
-  position: relative;
+  position: absolute;
   width: 100%;
+  z-index: 1;
 }
 .picture img {
   width: 100%;
@@ -331,7 +333,7 @@ h2 {
   margin-top: 0;
   border-top: solid #F7F7F7;
   border-radius: 33px 33px 0 0;
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   width: 100%;
   top: 225px;
@@ -367,6 +369,13 @@ h2 {
 .menu__container__starter, .menu__container__main, .menu__container__dessert {
   height: 17em;
 }
+@media screen and (min-width: 768px) {
+  .menu__container__starter, .menu__container__main, .menu__container__dessert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .menu__container__starter__txt, .menu__container__main__txt, .menu__container__dessert__txt {
   display: flex;
   flex-direction: column;
@@ -377,6 +386,19 @@ h2 {
   height: 65px;
   background-color: white;
   margin-bottom: 10px;
+}
+.menu__container__starter__txt:hover, .menu__container__main__txt:hover, .menu__container__dessert__txt:hover {
+  background-color: #EDEDED;
+}
+@media screen and (min-width: 768px) {
+  .menu__container__starter__txt, .menu__container__main__txt, .menu__container__dessert__txt {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .menu__container__starter__txt, .menu__container__main__txt, .menu__container__dessert__txt {
+    width: 65%;
+  }
 }
 .menu__container__starter__txt h3, .menu__container__main__txt h3, .menu__container__dessert__txt h3 {
   margin: 1px 0 0 10px;
@@ -409,6 +431,11 @@ h2 {
 .menu__button__command:hover {
   box-shadow: 0 4px 8px 0 #803ADD;
   background: linear-gradient(#FE82DC, #975DDD);
+}
+@media screen and (min-width: 768px) {
+  .menu__button {
+    margin-top: 35px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
