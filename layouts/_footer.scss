@@ -6,13 +6,18 @@
     background-color: #353535;
 
     &--menu{
-        @include column;
-        background-color: #353535;
+        @extend .footer;
         position: absolute;
         width: 100%;
         z-index: 2;
         top: 78em;
     }
+
+    &--menuB{
+        @extend .footer--menu;
+        top: 84em;
+    }
+    
     &__texte{
         color: white;
         margin-top: 15px;
