@@ -29,6 +29,51 @@ h2{
     margin-left: 15px;
 }
 
+/*.loading{
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: $color-g;
+    animation: hideLoading 3500ms 1 forwards;
+    animation-delay: 1500ms;
+   
+    &::after{
+        content : "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100px;
+        height: 100px;
+        border: $color-g solid 5px;
+        border-top-color: $color-p;
+        border-bottom-color: $color-v;
+        border-radius: 50%;
+        animation: spinner 1s linear infinite;
+    }
+
+    @keyframes hideLoading
+    {
+      100%
+      {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+ 
+    @keyframes spinner
+    {
+      100%
+      {
+        transform: translate(-50%,-50%) rotate(360deg);
+      }
+    }
+ 
+}*/
+
 .block{
     @include column;
 
@@ -72,15 +117,14 @@ h2{
         }
         &__step{
             @include center_elt;
-           
-            
+
             ul{
                 list-style-type: none;
                 padding: 0;
                     @include tablet-only{
                         @include center_elt;
                         flex-direction: row;
-                        width: 45em;
+                        width: 44em;
                         gap: 20px;
                     }
                     @include desktop-only{
@@ -101,8 +145,17 @@ h2{
                     height: 55px;
                     font-size: 14px;
                     font-weight: 500;
+                    position: relative;
 
-                   
+                    p{
+                        padding: 1px 5px;
+                        color: white;
+                        background-color: $color-v;
+                        border-radius: 10px;
+                        height: 17px;
+                        position: absolute;
+                        left: -8px;
+                    }
 
                     i{
                         padding-right: 20px;
@@ -223,9 +276,8 @@ h2{
                     }
                     &__icone{
                         margin-right: 20px;
-                            &:hover{
-                                color: $color-v;
-                            }
+                        
+                            
                     }
             }
             &__link{
@@ -269,8 +321,6 @@ h2{
     }
 
  
-   
-
     &__title{
         display: flex;
        
@@ -381,68 +431,36 @@ h2{
     }
 }
 
-/*.loading{
-    display: block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    background-color: $color-g;
-    animation: hideLoading 3500ms 1 forwards;
-    animation-delay: 1500ms;
-   
-    &::after{
-        content : "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 100px;
-        height: 100px;
-        border: $color-g solid 5px;
-        border-top-color: $color-p;
-        border-bottom-color: $color-v;
-        border-radius: 50%;
-        animation: spinner 1s linear infinite;
-    }
 
-    @keyframes hideLoading
-    {
-      100%
-      {
-        opacity: 0;
-        display: none;
-      }
-    }
- 
-    @keyframes spinner
-    {
-      100%
-      {
-        transform: translate(-50%,-50%) rotate(360deg);
-      }
-    }
- 
-}*/
 
-/*.loading{
+.loading{
     @include center_elt;
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: #E1E1E1;
+    top: 0;
+    left: 0;
+    background-color:#EDEDED;
     z-index: 10;
-    animation: hideLoader 2s 1 forwards;
-    animation-delay: 3s;
-    
-
+    animation: hidingLoader 2s 1 forwards;
+    animation-delay: 4s;
+  
     &__spinner{
         color: black;
-        font-size: 80px;
-        letter-spacing: 15px;
+        font-family: 'Shrikhand', cursive;
+        font-size: 35px;
+        letter-spacing: 5px;
         margin-bottom: 150px;
-        animation: flash 1.2s linear infinite;
+        animation: load infinite 1s alternate ;
+
+            @include tablet-only{
+                font-size: 60px;
+                letter-spacing: 15px;
+            }
+
+            @include desktop-only{
+                font-size: 80px;
+            }
 
 
         &:nth-child(1){
@@ -477,27 +495,28 @@ h2{
         }
     }
 
-    @keyframes flash {
+    @keyframes load {
         0%{
-            color: yellow;
-            text-shadow: $shadow yellow;
+            color: $color-p;
+            text-shadow: 1px 0 15px #975DDD;
         }
         90%{
             color: black;
             text-shadow: none;
         }
         100%{
-            color: yellow;
-            text-shadow: $shadow yellow;
+            color: $color-v;
+            text-shadow: 1px 0 10px #FE82DC;
+            transform: translate(-10px);
         }
     }
-    @keyframes hideLoader
+    @keyframes hidingLoader
     {
       100%
       {
         opacity: 0;
-        display: none;
+        visibility: hidden;
       }
     }
 
-}*/
+}

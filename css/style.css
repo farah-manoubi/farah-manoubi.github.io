@@ -87,6 +87,50 @@ h2 {
   margin-left: 15px;
 }
 
+/*.loading{
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: $color-g;
+    animation: hideLoading 3500ms 1 forwards;
+    animation-delay: 1500ms;
+
+    &::after{
+        content : "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100px;
+        height: 100px;
+        border: $color-g solid 5px;
+        border-top-color: $color-p;
+        border-bottom-color: $color-v;
+        border-radius: 50%;
+        animation: spinner 1s linear infinite;
+    }
+
+    @keyframes hideLoading
+    {
+      100%
+      {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    @keyframes spinner
+    {
+      100%
+      {
+        transform: translate(-50%,-50%) rotate(360deg);
+      }
+    }
+
+}*/
 .block {
   display: flex;
   flex-direction: column;
@@ -155,7 +199,7 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 45em;
+    width: 44em;
     gap: 20px;
   }
 }
@@ -182,6 +226,16 @@ h2 {
   height: 55px;
   font-size: 14px;
   font-weight: 500;
+  position: relative;
+}
+.block__step ul li p {
+  padding: 1px 5px;
+  color: white;
+  background-color: #9356DC;
+  border-radius: 10px;
+  height: 17px;
+  position: absolute;
+  left: -8px;
 }
 .block__step ul li i {
   padding-right: 20px;
@@ -305,9 +359,6 @@ h2 {
 }
 .container__cards__card__txt__icone {
   margin-right: 20px;
-}
-.container__cards__card__txt__icone:hover {
-  color: #9356DC;
 }
 .container__cards__card__link {
   position: absolute;
@@ -460,124 +511,89 @@ h2 {
   }
 }
 
-/*.loading{
-    display: block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    background-color: $color-g;
-    animation: hideLoading 3500ms 1 forwards;
-    animation-delay: 1500ms;
-
-    &::after{
-        content : "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 100px;
-        height: 100px;
-        border: $color-g solid 5px;
-        border-top-color: $color-p;
-        border-bottom-color: $color-v;
-        border-radius: 50%;
-        animation: spinner 1s linear infinite;
-    }
-
-    @keyframes hideLoading
-    {
-      100%
-      {
-        opacity: 0;
-        display: none;
-      }
-    }
-
-    @keyframes spinner
-    {
-      100%
-      {
-        transform: translate(-50%,-50%) rotate(360deg);
-      }
-    }
-
-}*/
-/*.loading{
-    @include center_elt;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #E1E1E1;
-    z-index: 10;
-    animation: hideLoader 2s 1 forwards;
-    animation-delay: 3s;
-
-
-    &__spinner{
-        color: black;
-        font-size: 80px;
-        letter-spacing: 15px;
-        margin-bottom: 150px;
-        animation: flash 1.2s linear infinite;
-
-
-        &:nth-child(1){
-            animation-delay: 0.1s;
-        }
-        &:nth-child(2){
-            animation-delay: 0.2s;
-        }
-        &:nth-child(3){
-            animation-delay: 0.3s;
-        }
-        &:nth-child(4){
-            animation-delay: 0.4s;
-        }
-        &:nth-child(5){
-            animation-delay: 0.5s;
-        }
-        &:nth-child(6){
-            animation-delay: 0.6s;
-        }
-        &:nth-child(7){
-            animation-delay: 0.7s;
-        }
-        &:nth-child(8){
-            animation-delay: 0.8s;
-        }
-        &:nth-child(9){
-            animation-delay: 0.9s;
-        }
-        &:nth-child(10){
-            animation-delay: 1s;
-        }
-    }
-
-    @keyframes flash {
-        0%{
-            color: yellow;
-            text-shadow: $shadow yellow;
-        }
-        90%{
-            color: black;
-            text-shadow: none;
-        }
-        100%{
-            color: yellow;
-            text-shadow: $shadow yellow;
-        }
-    }
-    @keyframes hideLoader
-    {
-      100%
-      {
-        opacity: 0;
-        display: none;
-      }
-    }
-
-}*/
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #EDEDED;
+  z-index: 10;
+  animation: hidingLoader 2s 1 forwards;
+  animation-delay: 4s;
+}
+.loading__spinner {
+  color: black;
+  font-family: "Shrikhand", cursive;
+  font-size: 35px;
+  letter-spacing: 5px;
+  margin-bottom: 150px;
+  animation: load infinite 1s alternate;
+}
+@media screen and (min-width: 768px) {
+  .loading__spinner {
+    font-size: 60px;
+    letter-spacing: 15px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .loading__spinner {
+    font-size: 80px;
+  }
+}
+.loading__spinner:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.loading__spinner:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loading__spinner:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.loading__spinner:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.loading__spinner:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.loading__spinner:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.loading__spinner:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.loading__spinner:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.loading__spinner:nth-child(9) {
+  animation-delay: 0.9s;
+}
+.loading__spinner:nth-child(10) {
+  animation-delay: 1s;
+}
+@keyframes load {
+  0% {
+    color: #FF79DA;
+    text-shadow: 1px 0 15px #975DDD;
+  }
+  90% {
+    color: black;
+    text-shadow: none;
+  }
+  100% {
+    color: #9356DC;
+    text-shadow: 1px 0 10px #FE82DC;
+    transform: translate(-10px);
+  }
+}
+@keyframes hidingLoader {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
