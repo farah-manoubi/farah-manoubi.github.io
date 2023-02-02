@@ -276,10 +276,23 @@ h2{
                     }
                     &__icone{
                         margin-right: 20px;
-                        
-
-                        
-                            
+                        .heart{
+                            @include heart;
+                            &:hover{
+                                @include filled-heart;
+                            } 
+                        }
+                        @keyframes heart-full {
+                            0% {
+                                opacity: 0;
+                            }
+                            50% {
+                                opacity: 0.5;
+                            }
+                            100% {
+                                opacity: 1;
+                            }
+                        }     
                     }
             }
             &__link{
@@ -335,13 +348,28 @@ h2{
             padding-left: 10px;
         }
 
-        i{
+        .heart{
+            @include heart;
             @include center_elt;
             justify-content: flex-end;
             width: 25%;
-            padding-right: 40px
-
+            padding-right: 40px;
+            &:hover{
+                @include filled-heart;
+            } 
         }
+
+        @keyframes heart-full {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }     
     }
     &__container{
         padding-left: 10px;

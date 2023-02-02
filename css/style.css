@@ -360,6 +360,30 @@ h2 {
 .container__cards__card__txt__icone {
   margin-right: 20px;
 }
+.container__cards__card__txt__icone .heart {
+  color: black;
+  font-size: 1.5rem;
+}
+.container__cards__card__txt__icone .heart:hover {
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(#FF79DA, #E965DB, #CF69DC, #B65AE1, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heart-full 2s infinite;
+}
+@keyframes heart-full {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .container__cards__card__link {
   position: absolute;
   top: 0;
@@ -405,13 +429,35 @@ h2 {
   margin-left: 0;
   padding-left: 10px;
 }
-.menu__title i {
+.menu__title .heart {
+  color: black;
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: flex-end;
   width: 25%;
   padding-right: 40px;
+}
+.menu__title .heart:hover {
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(#FF79DA, #E965DB, #CF69DC, #B65AE1, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heart-full 2s infinite;
+}
+@keyframes heart-full {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .menu__container {
   padding-left: 10px;

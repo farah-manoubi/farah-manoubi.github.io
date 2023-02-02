@@ -34,6 +34,21 @@
     background: linear-gradient(#FE82DC, #975DDD);
 }
 
+@mixin heart{
+    color: black;
+    font-size: 1.5rem;
+}
+
+@mixin filled-heart{
+    cursor: pointer;
+    font-weight: 700;
+    background: linear-gradient($color-p, #E965DB, #CF69DC, #B65AE1, $color-v);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: heart-full 2s infinite;  
+}
+
 @mixin tablet-only {
     @media screen and (min-width: map-get($breakpoints, tablet)){
         @content;
