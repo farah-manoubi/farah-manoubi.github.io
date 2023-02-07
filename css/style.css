@@ -59,8 +59,8 @@
   line-height: 80%;
 }
 .footer__texte p a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
 }
 .footer__texte p i {
   color: white;
@@ -452,63 +452,9 @@ h2 {
   background-color: white;
   margin-bottom: 10px;
   justify-content: space-between;
-  animation: progressive_menu 5s;
-  transition: 1s;
-  /*    &:nth-child(1){
-          animation-delay: 0.1s;
-
-
-
-      }
-
-      &:nth-child(2){
-          animation-delay: 0.2s;
-
-
-      }
-      &:nth-child(3){
-          animation-delay: 0.3s;
-
-
-      }
-      &:nth-child(4){
-          animation-delay: 0.4s;
-
-
-      }
-      &:nth-child(5){
-          animation-delay: 0.5s;
-
-
-      }
-      &:nth-child(6){
-          animation-delay: 0.6s;
-
-
-      }
-      &:nth-child(7){
-          animation-delay: 0.7s;
-
-
-      }
-      &:nth-child(8){
-          animation-delay: 0.8s;
-
-
-      }
-      &:nth-child(9){
-          animation-delay: 0.9s;
-
-
-      }
-      &:nth-child(10){
-          animation-delay: 1s;
-
-
-
-      }
-
-      */
+  animation-fill-mode: backwards;
+  animation-name: progressive_menu;
+  animation-duration: 2s;
 }
 .menu__container__starter__txt__description, .menu__container__main__txt__description, .menu__container__dessert__txt__description {
   display: flex;
@@ -549,12 +495,12 @@ h2 {
 }
 @keyframes progressive_menu {
   0% {
-    transform: translateY(30px);
     opacity: 0;
+    transform: translateY(30px);
   }
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 .menu__button {
@@ -583,6 +529,46 @@ h2 {
   .menu__button {
     margin-top: 35px;
   }
+}
+
+.one {
+  animation-delay: 0s;
+}
+
+.two {
+  animation-delay: 0.5s;
+}
+
+.three {
+  animation-delay: 1s;
+}
+
+.four {
+  animation-delay: 1.5s;
+}
+
+.five {
+  animation-delay: 2s;
+}
+
+.six {
+  animation-delay: 2.5s;
+}
+
+.seven {
+  animation-delay: 3s;
+}
+
+.eight {
+  animation-delay: 3.5s;
+}
+
+.nine {
+  animation-delay: 4s;
+}
+
+.ten {
+  animation-delay: 4.5s;
 }
 
 .loading {
