@@ -29,51 +29,6 @@ h2{
     margin-left: 15px;
 }
 
-/*.loading{
-    display: block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    background-color: $color-g;
-    animation: hideLoading 3500ms 1 forwards;
-    animation-delay: 1500ms;
-   
-    &::after{
-        content : "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 100px;
-        height: 100px;
-        border: $color-g solid 5px;
-        border-top-color: $color-p;
-        border-bottom-color: $color-v;
-        border-radius: 50%;
-        animation: spinner 1s linear infinite;
-    }
-
-    @keyframes hideLoading
-    {
-      100%
-      {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
- 
-    @keyframes spinner
-    {
-      100%
-      {
-        transform: translate(-50%,-50%) rotate(360deg);
-      }
-    }
- 
-}*/
-
 .block{
     @include column;
 
@@ -393,6 +348,7 @@ h2{
 
             &__txt{
                 @include center_elt;
+                position: relative;
                 border: 2px $color-g;
                 box-shadow: $shadow #E1E1E1;
                 border-radius: 15px;
@@ -400,7 +356,76 @@ h2{
                 background-color: white;
                 margin-bottom: 10px;
                 justify-content: space-between;
+                animation: progressive_menu 5s;
+                transition: 1s;
+               
+               
+                
+                
+               
+                
+                
+               
+                
+                /*    &:nth-child(1){
+                        animation-delay: 0.1s;
+                        
+                        
+                
+                    }
+                    
+                    &:nth-child(2){
+                        animation-delay: 0.2s;
+                        
+                      
+                    }
+                    &:nth-child(3){
+                        animation-delay: 0.3s;
+                        
+                      
+                    }
+                    &:nth-child(4){
+                        animation-delay: 0.4s;
+                        
+                   
+                    }
+                    &:nth-child(5){
+                        animation-delay: 0.5s;
+                        
+                        
+                    }
+                    &:nth-child(6){
+                        animation-delay: 0.6s;
+                        
+                        
+                    }
+                    &:nth-child(7){
+                        animation-delay: 0.7s;
+                        
+                     
+                    }
+                    &:nth-child(8){
+                        animation-delay: 0.8s;
+                        
+                        
+                    }
+                    &:nth-child(9){
+                        animation-delay: 0.9s;
+                       
+                        
+                    }
+                    &:nth-child(10){
+                        animation-delay: 1s;
+                       
+                       
+                    
+                    }
+                   
+                    */
+ 
+                
 
+                
                 &__description{
                     @include column;
                 }
@@ -440,6 +465,25 @@ h2{
                     font-size: 13px;
                 }
             }
+            @keyframes progressive_menu {
+                0%{
+                    
+                    transform: translateY(30px);
+                    opacity: 0;
+                  
+                   
+    
+                }
+
+                
+                100%{
+                   transform: translateY(0);
+                    opacity: 1;
+                 
+                }
+            }
+                
+           
 
         }
     }
@@ -481,7 +525,7 @@ h2{
         font-size: 35px;
         letter-spacing: 5px;
         margin-bottom: 150px;
-        animation: load infinite 1s alternate ;
+        animation: load infinite 1s alternate;
 
             @include tablet-only{
                 font-size: 60px;
