@@ -364,14 +364,23 @@ h2{
                 animation-name: progressive_menu;
                 animation-duration: 2s;
                 
-                &__description{
-                    @include column;
-                }
-
-                    &:hover{
-                        background-color:#EDEDED;;
+                    &__description{
+                        @include column;
                     }
 
+                    &__check{
+                       display: none;
+                       
+                    }
+                    &:hover{
+                        background-color:#EDEDED;
+                       
+                    }
+                    &:hover &__check{ 
+                        display: block;
+                        width: 10%;
+                        transition: margin-left 2s;
+                    }
                     &__price{
                         @include center_elt;
                         margin-top: 20px;
@@ -390,7 +399,8 @@ h2{
                         
                         width: 65%;
                     }
-               
+
+                   
                 
                 h3{
                     margin: 1px 0 0 10px;

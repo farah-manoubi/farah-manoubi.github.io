@@ -460,8 +460,16 @@ h2 {
   display: flex;
   flex-direction: column;
 }
+.menu__container__starter__txt__check, .menu__container__main__txt__check, .menu__container__dessert__txt__check {
+  display: none;
+}
 .menu__container__starter__txt:hover, .menu__container__main__txt:hover, .menu__container__dessert__txt:hover {
   background-color: #EDEDED;
+}
+.menu__container__starter__txt:hover .menu__container__starter__txt__check, .menu__container__starter__txt:hover .menu__container__main__txt__check, .menu__container__starter__txt:hover .menu__container__dessert__txt__check, .menu__container__main__txt:hover .menu__container__starter__txt__check, .menu__container__main__txt:hover .menu__container__main__txt__check, .menu__container__main__txt:hover .menu__container__dessert__txt__check, .menu__container__dessert__txt:hover .menu__container__starter__txt__check, .menu__container__dessert__txt:hover .menu__container__main__txt__check, .menu__container__dessert__txt:hover .menu__container__dessert__txt__check {
+  display: block;
+  width: 10%;
+  transition: margin-left 2s;
 }
 .menu__container__starter__txt__price, .menu__container__main__txt__price, .menu__container__dessert__txt__price {
   display: flex;
