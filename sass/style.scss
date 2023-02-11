@@ -359,37 +359,94 @@ h2{
                 height: 65px;
                 background-color: white;
                 margin-bottom: 10px;
-                justify-content: space-between;
+                
                 animation-fill-mode: backwards;
                 animation-name: progressive_menu;
                 animation-duration: 2s;
                 
+                &__all{
+                    @include center_elt;
+                    width: 100%;
+                    
                     &__description{
                         @include column;
-                    }
-
-                    &__check{
-                       display: none;
-                       
-                    }
-                    &:hover{
-                        background-color:#EDEDED;
-                       
-                    }
-                    &:hover &__check{ 
-                        display: block;
-                        width: 10%;
-                        transition: margin-left 2s;
+                        white-space: nowrap;
+                        width: 75%;
+                        
+                        
+                            
                     }
                     &__price{
                         @include center_elt;
+                        justify-content: end;
                         margin-top: 20px;
                         margin-right: 15px;
+                        width: 25%;
                         p{
                             font-weight: 700;
                         }
                     }
 
+                    h3{
+                        margin: 1px 0 0 10px;
+                        font-size: 15px;
+                        font-weight: 700;
+                        
+                    }
+                    p{
+                        padding: 0;
+                        margin: 7px 0 0 10px;
+                        font-size: 13px;
+                       
+                    }
+
+                }
+               
+                   
+
+                    &__check{
+                        @include center_elt;
+                        border-radius: 0 15px 15px 0;
+                        height: 63px;
+                        opacity: 0;
+                        width: 0;
+                        transition: width 1s;
+                        border: 2px solid #99E2D0;
+                        background-color: #99E2D0;
+                       
+                        i{
+                            font-size: 1.5rem;
+                            color: white;
+                        }
+                    }
+                    &:hover{
+                        background-color:#EDEDED;
+                    }
+
+                    &:hover &__all__description h3{
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        
+                    }
+                    &:hover &__all__description p{
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        
+                    }
+                   
+                
+                   
+                   
+                    &:hover &__check{ 
+                        opacity: 1;
+                        width: 20%;
+                    }
+                    &:hover &__check i{
+                        animation: rotating 1s;
+                    }
+                   
                     @include tablet-only{
                         width: 90%;
 
@@ -402,34 +459,28 @@ h2{
 
                    
                 
-                h3{
-                    margin: 1px 0 0 10px;
-                    font-size: 15px;
-                    font-weight: 700;
-                }
-                p{
-                    padding: 0;
-                    margin: 7px 0 0 10px;
-                    font-size: 13px;
-                }
+               
             }
            
             @keyframes progressive_menu {
                 0%{
-                   
                     opacity: 0;
                     transform: translateY(30px);
-                   
                 }
-
-                
                 100%{
-                    
                     opacity: 1;
-                    
                     transform: translateY(0); 
-                    
                 }
+            }
+
+            @keyframes rotating {
+                from{
+                    transform: rotate(0deg);
+                }
+                to{
+                    transform: rotate(360deg);
+                }
+                
             }
 
         }

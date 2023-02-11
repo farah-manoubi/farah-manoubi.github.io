@@ -451,35 +451,79 @@ h2 {
   height: 65px;
   background-color: white;
   margin-bottom: 10px;
-  justify-content: space-between;
   animation-fill-mode: backwards;
   animation-name: progressive_menu;
   animation-duration: 2s;
 }
-.menu__container__starter__txt__description, .menu__container__main__txt__description, .menu__container__dessert__txt__description {
+.menu__container__starter__txt__all, .menu__container__main__txt__all, .menu__container__dessert__txt__all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.menu__container__starter__txt__all__description, .menu__container__main__txt__all__description, .menu__container__dessert__txt__all__description {
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
+  width: 75%;
+}
+.menu__container__starter__txt__all__price, .menu__container__main__txt__all__price, .menu__container__dessert__txt__all__price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: end;
+  margin-top: 20px;
+  margin-right: 15px;
+  width: 25%;
+}
+.menu__container__starter__txt__all__price p, .menu__container__main__txt__all__price p, .menu__container__dessert__txt__all__price p {
+  font-weight: 700;
+}
+.menu__container__starter__txt__all h3, .menu__container__main__txt__all h3, .menu__container__dessert__txt__all h3 {
+  margin: 1px 0 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.menu__container__starter__txt__all p, .menu__container__main__txt__all p, .menu__container__dessert__txt__all p {
+  padding: 0;
+  margin: 7px 0 0 10px;
+  font-size: 13px;
 }
 .menu__container__starter__txt__check, .menu__container__main__txt__check, .menu__container__dessert__txt__check {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 15px 15px 0;
+  height: 63px;
+  opacity: 0;
+  width: 0;
+  transition: width 1s;
+  border: 2px solid #99E2D0;
+  background-color: #99E2D0;
+}
+.menu__container__starter__txt__check i, .menu__container__main__txt__check i, .menu__container__dessert__txt__check i {
+  font-size: 1.5rem;
+  color: white;
 }
 .menu__container__starter__txt:hover, .menu__container__main__txt:hover, .menu__container__dessert__txt:hover {
   background-color: #EDEDED;
 }
+.menu__container__starter__txt:hover .menu__container__starter__txt__all__description h3, .menu__container__starter__txt:hover .menu__container__main__txt__all__description h3, .menu__container__starter__txt:hover .menu__container__dessert__txt__all__description h3, .menu__container__main__txt:hover .menu__container__starter__txt__all__description h3, .menu__container__main__txt:hover .menu__container__main__txt__all__description h3, .menu__container__main__txt:hover .menu__container__dessert__txt__all__description h3, .menu__container__dessert__txt:hover .menu__container__starter__txt__all__description h3, .menu__container__dessert__txt:hover .menu__container__main__txt__all__description h3, .menu__container__dessert__txt:hover .menu__container__dessert__txt__all__description h3 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menu__container__starter__txt:hover .menu__container__starter__txt__all__description p, .menu__container__starter__txt:hover .menu__container__main__txt__all__description p, .menu__container__starter__txt:hover .menu__container__dessert__txt__all__description p, .menu__container__main__txt:hover .menu__container__starter__txt__all__description p, .menu__container__main__txt:hover .menu__container__main__txt__all__description p, .menu__container__main__txt:hover .menu__container__dessert__txt__all__description p, .menu__container__dessert__txt:hover .menu__container__starter__txt__all__description p, .menu__container__dessert__txt:hover .menu__container__main__txt__all__description p, .menu__container__dessert__txt:hover .menu__container__dessert__txt__all__description p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .menu__container__starter__txt:hover .menu__container__starter__txt__check, .menu__container__starter__txt:hover .menu__container__main__txt__check, .menu__container__starter__txt:hover .menu__container__dessert__txt__check, .menu__container__main__txt:hover .menu__container__starter__txt__check, .menu__container__main__txt:hover .menu__container__main__txt__check, .menu__container__main__txt:hover .menu__container__dessert__txt__check, .menu__container__dessert__txt:hover .menu__container__starter__txt__check, .menu__container__dessert__txt:hover .menu__container__main__txt__check, .menu__container__dessert__txt:hover .menu__container__dessert__txt__check {
-  display: block;
-  width: 10%;
-  transition: margin-left 2s;
+  opacity: 1;
+  width: 20%;
 }
-.menu__container__starter__txt__price, .menu__container__main__txt__price, .menu__container__dessert__txt__price {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-right: 15px;
-}
-.menu__container__starter__txt__price p, .menu__container__main__txt__price p, .menu__container__dessert__txt__price p {
-  font-weight: 700;
+.menu__container__starter__txt:hover .menu__container__starter__txt__check i, .menu__container__starter__txt:hover .menu__container__main__txt__check i, .menu__container__starter__txt:hover .menu__container__dessert__txt__check i, .menu__container__main__txt:hover .menu__container__starter__txt__check i, .menu__container__main__txt:hover .menu__container__main__txt__check i, .menu__container__main__txt:hover .menu__container__dessert__txt__check i, .menu__container__dessert__txt:hover .menu__container__starter__txt__check i, .menu__container__dessert__txt:hover .menu__container__main__txt__check i, .menu__container__dessert__txt:hover .menu__container__dessert__txt__check i {
+  animation: rotating 1s;
 }
 @media screen and (min-width: 768px) {
   .menu__container__starter__txt, .menu__container__main__txt, .menu__container__dessert__txt {
@@ -491,16 +535,6 @@ h2 {
     width: 65%;
   }
 }
-.menu__container__starter__txt h3, .menu__container__main__txt h3, .menu__container__dessert__txt h3 {
-  margin: 1px 0 0 10px;
-  font-size: 15px;
-  font-weight: 700;
-}
-.menu__container__starter__txt p, .menu__container__main__txt p, .menu__container__dessert__txt p {
-  padding: 0;
-  margin: 7px 0 0 10px;
-  font-size: 13px;
-}
 @keyframes progressive_menu {
   0% {
     opacity: 0;
@@ -509,6 +543,14 @@ h2 {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 .menu__button {
