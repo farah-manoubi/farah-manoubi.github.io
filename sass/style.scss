@@ -329,14 +329,17 @@ h2{
     &__container{
         padding-left: 10px;
         padding-right: 10px;
-     
-        
-        
-
-     
+      
         h3{
             @include titre_h3;
+            margin-bottom: 5px;
         }
+        .border{
+            border: solid #109071 2px;
+            width: 35px;
+            margin-bottom: 10px;
+        }
+        
         &__starter, &__main, &__dessert{
             height: 17em;
  
@@ -400,9 +403,7 @@ h2{
                        
                     }
 
-                }
-               
-                   
+                }  
 
                     &__check{
                         @include center_elt;
@@ -434,11 +435,7 @@ h2{
                         text-overflow: ellipsis;
                         overflow: hidden;
                         
-                    }
-                   
-                
-                   
-                   
+                    }                   
                     &:hover &__check{ 
                         opacity: 1;
                         width: 20%;
@@ -456,10 +453,6 @@ h2{
                         
                         width: 65%;
                     }
-
-                   
-                
-               
             }
            
             @keyframes progressive_menu {
