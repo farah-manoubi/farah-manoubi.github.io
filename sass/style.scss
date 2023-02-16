@@ -18,9 +18,6 @@ body{
             margin-left: 30px;
             margin-right: 30px;
         }
-    
-
-   
 }
 
 h2{
@@ -36,6 +33,7 @@ h2{
             @include center_elt;
             background-color: #EDEDED;
             border-top: solid #E1E1E1;
+
             p{
                 font-size: 14px;
                 font-weight: 500;
@@ -44,12 +42,14 @@ h2{
                 padding-right: 5px;
             }
         }
+
         &__explorer{
             @include column;
             align-items: center;
             text-align: center;
             height: 14em;
             background-color: $color-g;
+
             h1{
                 font-weight: 700;
                 width: 10em;
@@ -61,6 +61,7 @@ h2{
                 font-weight: 400;
                 width: 20em;
             }
+
             &__button{
                 @include button;
                 margin-top: 5px;
@@ -70,12 +71,14 @@ h2{
                 }
             }
         }
+
         &__step{
             @include center_elt;
 
             ul{
                 list-style-type: none;
                 padding: 0;
+
                     @include tablet-only{
                         @include center_elt;
                         flex-direction: row;
@@ -115,7 +118,6 @@ h2{
                     i{
                         padding-right: 20px;
                         color: grey;
-
                     }
 
                     &:hover{
@@ -157,8 +159,6 @@ h2{
                 width: 100%;
                 flex-flow: row wrap;
                 gap: 30px;
-                
-                
             }
 
             @include desktop-only{
@@ -179,6 +179,7 @@ h2{
                 @include desktop-only{
                     width: 350px;
                 }
+                
             img{
                 width: 100%;
                 height: 155px;
@@ -216,6 +217,7 @@ h2{
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
+
                     &__title{
                         margin-left: 15px;
                         margin-top: 10px;
@@ -229,14 +231,17 @@ h2{
                                 margin: 0;
                             }
                     }
+
                     &__icone{
                         margin-right: 20px;
+
                         .heart{
                             @include heart;
                             &:hover{
                                 @include filled-heart;
                             } 
                         }
+
                         @keyframes heart-full {
                             0% {
                                 opacity: 0;
@@ -290,7 +295,6 @@ h2{
         height: 80em;
     }
 
- 
     &__title{
         display: flex;
        
@@ -326,6 +330,7 @@ h2{
             }
         }     
     }
+
     &__container{
         padding-left: 10px;
         padding-right: 10px;
@@ -362,7 +367,6 @@ h2{
                 height: 65px;
                 background-color: white;
                 margin-bottom: 10px;
-                
                 animation-fill-mode: backwards;
                 animation-name: progressive_menu;
                 animation-duration: 2s;
@@ -370,21 +374,20 @@ h2{
                 &__all{
                     @include center_elt;
                     width: 100%;
-                    
+
                     &__description{
                         @include column;
                         white-space: nowrap;
-                        width: 75%;
-                        
-                        
-                            
+                        width: 75%;    
                     }
+
                     &__price{
                         @include center_elt;
                         justify-content: end;
                         margin-top: 20px;
                         margin-right: 15px;
                         width: 25%;
+
                         p{
                             font-weight: 700;
                         }
@@ -394,65 +397,58 @@ h2{
                         margin: 1px 0 0 10px;
                         font-size: 15px;
                         font-weight: 700;
-                        
                     }
+
                     p{
                         padding: 0;
                         margin: 7px 0 0 10px;
-                        font-size: 13px;
-                       
+                        font-size: 13px; 
                     }
-
                 }  
 
-                    &__check{
-                        @include center_elt;
-                        border-radius: 0 15px 15px 0;
-                        height: 63px;
-                        opacity: 0;
-                        width: 0;
-                        transition: width 1s;
-                        border: 2px solid #99E2D0;
-                        background-color: #99E2D0;
-                       
-                        i{
-                            font-size: 1.5rem;
-                            color: white;
-                        }
+                &__check{
+                    @include center_elt;
+                    border-radius: 0 15px 15px 0;
+                    height: 63px;
+                    opacity: 0;
+                    width: 0;
+                    transition: width 1s;
+                    border: 2px solid #99E2D0;
+                    background-color: #99E2D0;
+                    
+                    i{
+                        font-size: 1.5rem;
+                        color: white;
                     }
-                    &:hover{
-                        background-color:#EDEDED;
-                    }
+                }
 
-                    &:hover &__all__description h3{
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        
-                    }
-                    &:hover &__all__description p{
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        
-                    }                   
-                    &:hover &__check{ 
-                        opacity: 1;
-                        width: 20%;
-                    }
-                    &:hover &__check i{
-                        animation: rotating 1s;
-                    }
-                   
-                    @include tablet-only{
-                        width: 90%;
-
-                    }
-
-                    @include desktop-only{
-                        
-                        width: 65%;
-                    }
+                &:hover{
+                    background-color:#EDEDED;
+                }
+                &:hover &__all__description h3{
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;   
+                }
+                &:hover &__all__description p{
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }                   
+                &:hover &__check{ 
+                    opacity: 1;
+                    width: 20%;
+                }
+                &:hover &__check i{
+                    animation: rotating 1s;
+                }
+                
+                @include tablet-only{
+                    width: 90%;
+                }
+                @include desktop-only{
+                    width: 65%;
+                }
             }
            
             @keyframes progressive_menu {
@@ -473,13 +469,13 @@ h2{
                 to{
                     transform: rotate(360deg);
                 }
-                
             }
 
         }
     }
     &__button{
         @include center_elt;
+        
         &__command{
                 @include button;
                 margin-top: 15px;
@@ -555,7 +551,6 @@ h2{
                 font-size: 80px;
             }
 
-
         &:nth-child(1){
             animation-delay: 0.1s;
         }
@@ -611,5 +606,4 @@ h2{
         visibility: hidden;
       }
     }
-
 }

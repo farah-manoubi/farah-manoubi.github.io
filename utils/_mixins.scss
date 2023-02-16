@@ -11,8 +11,6 @@
     flex-direction: column;
 }
 
-
-
 @mixin titre_h3{
     font-size: 15px;
     font-weight: 400;
@@ -54,7 +52,6 @@
         @content;
     }
 }
-
 
 @mixin desktop-only {
     @media screen and (min-width: map-get($breakpoints, desktop)){
