@@ -313,7 +313,7 @@ h2{
             justify-content: flex-end;
             width: 25%;
             padding-right: 40px;
-            &:hover{
+            &:hover{  
                 @include filled-heart;
             } 
         }

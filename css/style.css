@@ -331,7 +331,7 @@ h2 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: heart-full 2s infinite;
+  animation: heart-full 2s;
 }
 @keyframes heart-full {
   0% {
@@ -406,7 +406,7 @@ h2 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: heart-full 2s infinite;
+  animation: heart-full 2s;
 }
 @keyframes heart-full {
   0% {
