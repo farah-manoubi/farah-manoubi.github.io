@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .header {
   display: flex;
   height: 50px;
@@ -91,6 +92,7 @@ h2 {
   margin-left: 15px;
 }
 
+/* Style de la partie explicative du fonctionnement du site */
 .block {
   display: flex;
   flex-direction: column;
@@ -152,6 +154,7 @@ h2 {
 .block__step ul {
   list-style-type: none;
   padding: 0;
+  /* Mise en page pour le format tablette et ordinateur */
 }
 @media screen and (min-width: 768px) {
   .block__step ul {
@@ -187,6 +190,7 @@ h2 {
   font-size: 14px;
   font-weight: 500;
   position: relative;
+  /* Changement de couleur du bouton au survol*/
 }
 .block__step ul li p {
   padding: 1px 5px;
@@ -208,6 +212,7 @@ h2 {
   color: #9356DC;
 }
 
+/* Style de la partie contenant les cards menus */
 .container {
   display: flex;
   flex-direction: column;
@@ -257,6 +262,8 @@ h2 {
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   position: relative;
+  /* Bouton Nouveau sur les cards */
+  /* Permet aux cards d'être cliquable et de mener aux pages de menus */
 }
 @media screen and (min-width: 768px) {
   .container__cards__card {
@@ -319,6 +326,8 @@ h2 {
 }
 .container__cards__card__txt__icone {
   margin-right: 20px;
+  /* Icone du coeur qui se remplit progressivement au survol */
+  /* Fonction qui controle l'opacité de l'icone */
 }
 .container__cards__card__txt__icone .heart {
   color: black;
@@ -352,6 +361,7 @@ h2 {
   width: 87%;
 }
 
+/* Images en arrière plan des pages de menu */
 .picture {
   height: 205px;
   position: absolute;
@@ -364,6 +374,7 @@ h2 {
   object-fit: cover;
 }
 
+/* Mise en page de la page de menu */
 .menu, .menu--taille {
   margin-top: 0;
   border-top: solid #F7F7F7;
@@ -374,12 +385,16 @@ h2 {
   top: 225px;
   background-color: #F7F7F7;
   height: 70em;
+  /* Modification de la taille pour la page de menu B */
+  /* Partie contenant la mise en page des plats */
+  /* Affichage du bouton */
 }
 .menu--taille {
   height: 80em;
 }
 .menu__title {
   display: flex;
+  /* Remplissage de l'icone du coeur */
 }
 .menu__title h2 {
   font-family: "Shrikhand", cursive;
@@ -435,6 +450,9 @@ h2 {
 }
 .menu__container__starter, .menu__container__main, .menu__container__dessert {
   height: 17em;
+  /* Mise en page des descriptions des plats contenus dans les menus */
+  /* Fonction qui affiche les plats progresivement */
+  /* Fonction qui permet à la check de faire une rotation complète */
 }
 .menu__container__starter--length, .menu__container__main--length, .menu__container__dessert--length {
   height: 22em;
@@ -460,6 +478,10 @@ h2 {
   animation-fill-mode: backwards;
   animation-name: progressive_menu;
   animation-duration: 2s;
+  /* Affichage de la checkbox (dans un premier temps invible) */
+  /* Titre et description qui sont rognés */
+  /* Au survol la checkbox s'affiche */
+  /* Au survol l'icone check effectue une rotation */
 }
 .menu__container__starter__txt__all, .menu__container__main__txt__all, .menu__container__dessert__txt__all {
   display: flex;
@@ -587,6 +609,7 @@ h2 {
   }
 }
 
+/* Classe qui impose un temps à l'affichage de chaque div */
 .one {
   animation-delay: 0s;
 }
@@ -627,6 +650,7 @@ h2 {
   animation-delay: 4.5s;
 }
 
+/* Loading spinner */
 .loading {
   display: flex;
   justify-content: center;
@@ -640,6 +664,8 @@ h2 {
   z-index: 10;
   animation: hidingLoader 2s 1 forwards;
   animation-delay: 4s;
+  /* Fonction permettant de changer la couleur des lettres avec un petit mouvement */
+  /* Page de loading qui disparait entièrement */
 }
 .loading__spinner {
   color: black;

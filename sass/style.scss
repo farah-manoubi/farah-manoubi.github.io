@@ -26,6 +26,7 @@ h2{
     margin-left: 15px;
 }
 
+/* Style de la partie explicative du fonctionnement du site */
 .block{
     @include column;
 
@@ -79,6 +80,7 @@ h2{
                 list-style-type: none;
                 padding: 0;
 
+                /* Mise en page pour le format tablette et ordinateur */
                     @include tablet-only{
                         @include center_elt;
                         flex-direction: row;
@@ -120,6 +122,7 @@ h2{
                         color: grey;
                     }
 
+                    /* Changement de couleur du bouton au survol*/
                     &:hover{
                         background-color: #EDEDED;
 
@@ -133,6 +136,7 @@ h2{
         }
 }
 
+/* Style de la partie contenant les cards menus */
 .container{
     @include column;
     background-color: $color-g;
@@ -190,6 +194,8 @@ h2{
                         height: 250px;
                     }
             }
+
+            /* Bouton Nouveau sur les cards */
             &__new{
                 position:absolute;
                 z-index: 1;
@@ -235,6 +241,7 @@ h2{
                     &__icone{
                         margin-right: 20px;
 
+                        /* Icone du coeur qui se remplit progressivement au survol */
                         .heart{
                             @include heart;
                             &:hover{
@@ -242,6 +249,7 @@ h2{
                             } 
                         }
 
+                        /* Fonction qui controle l'opacité de l'icone */
                         @keyframes heart-full {
                             0% {
                                 opacity: 0;
@@ -255,6 +263,8 @@ h2{
                         }     
                     }
             }
+
+            /* Permet aux cards d'être cliquable et de mener aux pages de menus */
             &__link{
                 position: absolute;
                 top: 0;
@@ -267,6 +277,7 @@ h2{
 
 }
 
+/* Images en arrière plan des pages de menu */
 .picture{
     height: 205px;
     position: absolute;
@@ -279,6 +290,7 @@ h2{
     }
 }
 
+/* Mise en page de la page de menu */
 .menu{
     margin-top: 0;
     border-top: solid $color-g;
@@ -290,6 +302,7 @@ h2{
     background-color: $color-g;
     height: 70em;
 
+    /* Modification de la taille pour la page de menu B */
     &--taille{
         @extend .menu;
         height: 80em;
@@ -307,6 +320,7 @@ h2{
             padding-left: 10px;
         }
 
+        /* Remplissage de l'icone du coeur */
         .heart{
             @include heart;
             @include center_elt;
@@ -331,6 +345,7 @@ h2{
         }     
     }
 
+    /* Partie contenant la mise en page des plats */
     &__container{
         padding-left: 10px;
         padding-right: 10px;
@@ -358,6 +373,7 @@ h2{
                 align-items: center;
             }
 
+            /* Mise en page des descriptions des plats contenus dans les menus */
             &__txt{
                 @include center_elt;
                 position: relative;
@@ -406,6 +422,7 @@ h2{
                     }
                 }  
 
+                /* Affichage de la checkbox (dans un premier temps invible) */
                 &__check{
                     @include center_elt;
                     border-radius: 0 15px 15px 0;
@@ -425,6 +442,8 @@ h2{
                 &:hover{
                     background-color:#EDEDED;
                 }
+
+                /* Titre et description qui sont rognés */
                 &:hover &__all__description h3{
                     white-space: nowrap;
                     text-overflow: ellipsis;
@@ -434,11 +453,15 @@ h2{
                     white-space: nowrap;
                     text-overflow: ellipsis;
                     overflow: hidden;
-                }                   
+                }   
+                
+                /* Au survol la checkbox s'affiche */
                 &:hover &__check{ 
                     opacity: 1;
                     width: 20%;
                 }
+
+                /* Au survol l'icone check effectue une rotation */
                 &:hover &__check i{
                     animation: rotating 1s;
                 }
@@ -451,6 +474,7 @@ h2{
                 }
             }
            
+            /* Fonction qui affiche les plats progresivement */
             @keyframes progressive_menu {
                 0%{
                     opacity: 0;
@@ -462,6 +486,7 @@ h2{
                 }
             }
 
+            /* Fonction qui permet à la check de faire une rotation complète */
             @keyframes rotating {
                 from{
                     transform: rotate(0deg);
@@ -473,6 +498,8 @@ h2{
 
         }
     }
+
+    /* Affichage du bouton */
     &__button{
         @include center_elt;
         
@@ -491,6 +518,8 @@ h2{
         }
     }
 }
+
+/* Classe qui impose un temps à l'affichage de chaque div */
 .one{
     animation-delay: 0.0s
 }
@@ -522,6 +551,7 @@ h2{
     animation-delay: 4.5s;
 }
 
+/* Loading spinner */
 .loading{
     @include center_elt;
     position: fixed;
@@ -583,6 +613,7 @@ h2{
         }
     }
 
+    /* Fonction permettant de changer la couleur des lettres avec un petit mouvement */
     @keyframes load {
         0%{
             color: $color-p;
@@ -598,6 +629,8 @@ h2{
             transform: translate(-10px);
         }
     }
+
+    /* Page de loading qui disparait entièrement */
     @keyframes hidingLoader
     {
       100%
